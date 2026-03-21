@@ -72,3 +72,17 @@ body {
 .section-title-wrapper:hover::after {
   width: 100%;
 }
+/* Gradient animation for logo */
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+  background-size: 200% auto;
+}

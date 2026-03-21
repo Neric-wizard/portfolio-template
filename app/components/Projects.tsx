@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 type TiltCardProps = {
   children: ReactNode;
@@ -66,7 +67,8 @@ const projects = [
     tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
     github: "https://github.com/Neric-wizard/saas-landing-page",
     live: "https://saas-landing-page-nine-gamma.vercel.app",
-    image: "🚀",
+    image: "/images/saas-landing.jpg",
+    imageAlt: "SaaS Landing Page Preview"
   },
   {
     title: "Admin Dashboard",
@@ -74,7 +76,8 @@ const projects = [
     tags: ["Next.js", "TypeScript", "Tailwind", "Recharts", "tRPC"],
     github: "https://github.com/Neric-wizard/admin-dashboard",
     live: "https://admin-dashboard-chi-black-48.vercel.app",
-    image: "📊",
+    image: "/images/admin-dashboard.jpg",
+    imageAlt: "Admin Dashboard Preview"
   },
   {
     title: "Portfolio Template",
@@ -82,8 +85,9 @@ const projects = [
     tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
     github: "https://github.com/Neric-wizard/portfolio-template",
     live: "https://portfolio-template-psi-weld.vercel.app",
-    image: "🎨",
-  },
+    image: "/images/portfolio-template.jpg",
+    imageAlt: "Portfolio Template Preview"
+  }
 ];
 
 export default function Projects() {
@@ -118,8 +122,13 @@ export default function Projects() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-shadow"
               >
-                <div className="h-48 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center text-6xl">
-                  {project.image}
+                <div className="h-48 relative overflow-hidden bg-gray-100 dark:bg-gray-800">
+                  <Image
+                    src={project.image}
+                    alt={project.imageAlt}
+                    fill
+                    className="object-cover hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
