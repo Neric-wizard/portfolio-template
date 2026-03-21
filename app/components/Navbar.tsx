@@ -12,7 +12,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
       
-      // Detect active section for highlighting
       const sections = ["projects", "skills", "testimonials", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -46,7 +45,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo with gradient and glow effect */}
+          {/* Logo */}
           <a 
             href="#" 
             className="group relative text-2xl font-bold"
@@ -75,12 +74,6 @@ export default function Navbar() {
                 )}
               </a>
             ))}
-            <a
-              href="/resume.pdf"
-              className="ml-4 px-5 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-medium rounded-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all hover:scale-105"
-            >
-              Resume
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,12 +102,6 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a
-              href="/resume.pdf"
-              className="mt-2 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-medium rounded-lg text-center"
-            >
-              Resume
-            </a>
           </div>
         )}
       </div>
