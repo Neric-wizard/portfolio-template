@@ -48,7 +48,7 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-white dark:bg-gray-950">
+    <section id="skills" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -57,8 +57,11 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          <span className="section-badge">Tech Stack</span>
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Skills & Expertise
+            <span className="section-title-wrapper">
+              Skills & Expertise
+            </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Technologies I work with daily
@@ -75,7 +78,10 @@ export default function Skills() {
                 transition={{ duration: 0.5 }}
                 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-8 text-center"
               >
-                {category.name}
+                <span className="relative inline-block">
+                  {category.name}
+                  <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></span>
+                </span>
               </motion.h3>
               
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -88,19 +94,22 @@ export default function Skills() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.05 }}
-                      className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-shadow group"
+                      className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 text-center hover:shadow-lg hover:scale-105 transition-all duration-300 group border border-gray-100 dark:border-gray-700"
                     >
                       <Icon 
-                        className="w-12 h-12 mx-auto mb-4 group-hover:scale-110 transition-transform" 
+                        className="w-12 h-12 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" 
                         style={{ color: skill.color }}
                       />
                       <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                         {skill.name}
                       </h4>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
-                        <div 
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 overflow-hidden">
+                        <motion.div 
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: 0.2 }}
                           className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-full h-1.5"
-                          style={{ width: `${skill.level}%` }}
                         />
                       </div>
                     </motion.div>

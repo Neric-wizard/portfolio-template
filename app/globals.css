@@ -86,3 +86,37 @@ body {
   animation: gradient-x 3s ease infinite;
   background-size: 200% auto;
 }
+/* Skills section decoration */
+.section-badge {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(236,72,153,0.1));
+  color: #a855f7;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(168,85,247,0.2);
+  backdrop-filter: blur(4px);
+}
+
+.section-title-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #a855f7, #ec489a);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.section-title-wrapper:hover::after {
+  width: 100%;
+}
