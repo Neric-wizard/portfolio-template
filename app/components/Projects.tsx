@@ -29,13 +29,10 @@ function TiltCard({ children }: TiltCardProps) {
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     const rect = e.currentTarget.getBoundingClientRect();
-
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
-
     const xPct = (mouseX / rect.width - 0.5) * 200;
     const yPct = (mouseY / rect.height - 0.5) * 200;
-
     x.set(xPct);
     y.set(yPct);
   }
@@ -65,8 +62,7 @@ function TiltCard({ children }: TiltCardProps) {
 const projects = [
   {
     title: "SaaS Landing Page",
-    description:
-      "A modern SaaS landing page with animated hero, features section, pricing, and contact form. Built with Next.js and Tailwind.",
+    description: "A modern SaaS landing page with animated hero, features section, pricing, and contact form. Built with Next.js and Tailwind.",
     tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
     github: "https://github.com/Neric-wizard/saas-landing-page",
     live: "https://saas-landing-page-nine-gamma.vercel.app",
@@ -74,8 +70,7 @@ const projects = [
   },
   {
     title: "Admin Dashboard",
-    description:
-      "A full-featured admin dashboard with stats, user management, sales charts, and real-time indicators.",
+    description: "A full-featured admin dashboard with stats, user management, sales charts, and real-time indicators.",
     tags: ["Next.js", "TypeScript", "Tailwind", "Recharts", "tRPC"],
     github: "https://github.com/Neric-wizard/admin-dashboard",
     live: "https://admin-dashboard-chi-black-48.vercel.app",
@@ -83,8 +78,7 @@ const projects = [
   },
   {
     title: "Portfolio Template",
-    description:
-      "A clean, modern developer portfolio template with projects showcase, skills section, and contact form.",
+    description: "A clean, modern developer portfolio template with projects showcase, skills section, and contact form.",
     tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
     github: "https://github.com/Neric-wizard/portfolio-template",
     live: "https://portfolio-template-psi-weld.vercel.app",
@@ -94,7 +88,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-24 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
+    <section id="projects" className="py-24 bg-white dark:bg-gray-950">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,8 +97,11 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          <span className="section-badge">My Work</span>
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured Projects
+            <span className="section-title-wrapper">
+              Featured Projects
+            </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Here are some of my recent works
@@ -124,16 +121,13 @@ export default function Projects() {
                 <div className="h-48 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center text-6xl">
                   {project.image}
                 </div>
-
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                     {project.title}
                   </h3>
-
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     {project.description}
                   </p>
-
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, i) => (
                       <span
@@ -144,7 +138,6 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-
                   <div className="flex gap-4">
                     <a
                       href={project.github}
@@ -155,7 +148,6 @@ export default function Projects() {
                       <Github size={18} />
                       <span className="text-sm">Code</span>
                     </a>
-
                     <a
                       href={project.live}
                       target="_blank"

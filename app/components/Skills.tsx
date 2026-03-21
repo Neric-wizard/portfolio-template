@@ -48,10 +48,8 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section className="py-24 bg-white dark:bg-gray-950">
+    <section id="skills" className="py-24 bg-white dark:bg-gray-950">
       <div className="max-w-6xl mx-auto px-6">
-        
-        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +65,6 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* Skills Categories */}
         <div className="space-y-16">
           {skillCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
@@ -100,14 +97,12 @@ export default function Skills() {
                       <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                         {skill.name}
                       </h4>
-                      {skill.level && (
-                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
-                          <div 
-                            className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-full h-1.5"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      )}
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                        <div 
+                          className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-full h-1.5"
+                          style={{ width: `${skill.level}%` }}
+                        />
+                      </div>
                     </motion.div>
                   );
                 })}
