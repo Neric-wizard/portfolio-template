@@ -32,6 +32,7 @@ export default function Navbar() {
     { name: "Projects", href: "#projects", id: "projects" },
     { name: "Skills", href: "#skills", id: "skills" },
     { name: "Testimonials", href: "#testimonials", id: "testimonials" },
+    { name: "Blog", href: "#blog", id: "blog" }, 
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 

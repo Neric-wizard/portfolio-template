@@ -61,7 +61,7 @@ const trustedBy = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Header */}

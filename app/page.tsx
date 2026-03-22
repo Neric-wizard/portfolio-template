@@ -5,9 +5,10 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
+import Blog from "./components/Blog";
+import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
-import CTASection from "./components/CTASection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Skills />
       <Testimonials />
       <Contact />
+      <Blog />
       <CTASection />
       <Footer />
       <BackToTop />
